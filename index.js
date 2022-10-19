@@ -6,20 +6,16 @@ form.addEventListener("submit", (e) => {
   let getdata = document.getElementById("get-data").value;
   //let text = `https://api.github.com/users/${getdata}`;
   let result = "";
-  let text = "https://api.github.com/users" + "/" + getdata;
+  console.log(getdata);
+  let text = "https://breakingbadapi.com/api/characters" + "/1/" + getdata;
+  console.log(text);
   fetch(text)
     .then((res) => res.json())
     .then((data) => {
       result += `
               <h1>${data.name}</h1>
-              <img src="${data.avatar_url}"/>
-              <ul>
-              <li>repository:${data.public_repos}</li>
-              <li>followers:${data.followers}</li>
-              <li>following:${data.following}</li>
-              <div id="repos"></div>
-              </ul>
               `;
+      /*
       let url = `${data.url}` + "/" + "repos?" + "sort=pushed&per_page=5";
       //console.log(url);
       fetch(url)
@@ -33,6 +29,7 @@ form.addEventListener("submit", (e) => {
           //console.log(repo);
           document.getElementById("repos").innerHTML = repo;
         });
+        */
       output.innerHTML = result;
     });
 });
