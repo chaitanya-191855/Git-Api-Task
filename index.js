@@ -19,7 +19,6 @@ form.addEventListener("submit", (e) => {
       <li>Nickname: ${data[0].nickname}</li>
       </ul>
       `;
-
       output.innerHTML = result;
     });
 });
