@@ -6,8 +6,10 @@ form.addEventListener("submit", (e) => {
   let getdata = document.getElementById("get-data").value;
   //let text = `https://api.github.com/users/${getdata}`;
   let result = "";
+  let arr = getdata.split(" ");
   console.log(getdata);
-  let text = "https://breakingbadapi.com/api/characters" + "/1/" + getdata;
+  let text =
+    "https://www.breakingbadapi.com/api/characters?" + "name=" + arr[0];
   console.log(text);
   fetch(text)
     .then((res) => res.json())
