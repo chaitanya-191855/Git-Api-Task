@@ -1,5 +1,21 @@
 let form = document.querySelector("#form");
 let output = document.querySelector("#output");
+let j = 0;
+function Themeschange() {
+  if (j === 0) {
+    document.getElementById("Themes-color").innerHTML =
+      "Click for White Themes";
+    document.getElementById("main").style.backgroundColor = "black";
+    document.getElementById("main").style.color = "white";
+    j = 1;
+  } else {
+    document.getElementById("Themes-color").innerHTML =
+      "Click for Black Themes";
+    document.getElementById("main").style.backgroundColor = "white";
+    document.getElementById("main").style.color = "black";
+    j = 0;
+  }
+}
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
